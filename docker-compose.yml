@@ -6,7 +6,7 @@ services:
     image: nantawat/app:1.0.0
     container_name: tct-32-app
     ports:
-      - 13377:1337
+      - ${APP_PORTS}
     environment:
       - DATABASE_CLIENT=postgres
       - DATABASE_HOST=db
@@ -21,7 +21,7 @@ services:
     image: postgres:15.5-bullseye
     container_name: tct-32-db
     ports:
-      - 54321:5432
+      - ${DB_PORTS}
     environment:
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
