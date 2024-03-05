@@ -18,6 +18,8 @@ services:
     networks:
       - my-network
     restart: always
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
   db:
     image: postgres:15.5-bullseye
     container_name: tct-32-db
